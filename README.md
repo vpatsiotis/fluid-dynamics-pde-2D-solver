@@ -1,33 +1,22 @@
 # fluid-dynamics-pde-2D-solver
 2D Incompressible Navier-Stokes &amp; PDE Numerical Solver in C++ and Python.
 
-# Hi, I'm Vasileios Patsiotis 👋
+# 2D Incompressible Navier-Stokes & PDE Numerical Solver
 
-An Analytical Mechanical & Aeronautics Engineer specializing in **Computational Fluid Dynamics (CFD)**, **Multiphysics Coupling**, and **Scientific Computing**. I design, implement, and validate numerical solvers from first principles and develop automated workflows for high-fidelity engineering simulations.
+An object-oriented, high-performance numerical solver built from first principles in **C++** and **Python** (with algorithm prototyping in **MATLAB**). This repository contains solvers for 2D incompressible Navier-Stokes equations (Lid-Driven Cavity), non-linear Burgers' equations, and elliptic PDEs (Laplace/Poisson), featuring dynamic **Adaptive Mesh Refinement (AMR)** and rigorous verification.
 
----
+## 🚀 Key Features
+* **Multi-Language Architecture:** Core mathematical prototypes developed in Python/MATLAB; high-gradient modules and execution loops migrated to object-oriented **C++** for memory management and raw speed.
+* **Pressure-Velocity Coupling:** Implemented custom algorithms to handle elliptic Poisson pressure equations and mass conservation.
+* **Adaptive Mesh Refinement (AMR):** Dynamic grid management that automatically tracks and refines zones with localized high-gradient flow profiles while coarsening uniform zones.
+* **Post-Processing Ready:** Solvers export data directly to `.vtk` format for high-fidelity 2D/3D visualization in **ParaView**.
 
-### 🚀 What I Do
-* **Solver Development:** Building 1D/2D numerical solvers from scratch (FVM/FDM) using **C++** and **Python/MATLAB** with focus on OOP architecture and performance.
-* **Multiphysics & CFD:** Advanced simulation workflows in **ANSYS Fluent**, **STAR-CCM+**, and **OpenFOAM**, covering Conjugate Heat Transfer (CHT), Fluid-Structure Interaction (FSI), and turbulence modeling.
-* **Engineering Automation:** Programming parametric sweeps, automated mesh generation, and data parsing pipelines to streamline R&D processes.
+## 📐 Numerical Methodology & Physics
+1. **Governing Equations:** 2D Incompressible Navier-Stokes, Non-linear Burgers', Poisson, and Laplace PDEs.
+2. **Discretization:** Finite Volume Method (FVM) / Finite Difference Method (FDM) on structured computational grids.
+3. **Stability Control:** Automated time-stepping tracking based on the Courant–Friedrichs–Lewy (**CFL**) condition.
 
----
+## 📊 Verification & Grid Convergence Study
+To ensure numerical stability and physical accuracy, the solver was subjected to a rigorous **Grid Independence Study**. 
 
-### 💻 Core Tech Stack
-* **Languages:** C++, Python, MATLAB, C
-* **CFD / FEA Tools:** ANSYS Fluent, STAR-CCM+, OpenFOAM, ANSYS Mechanical
-* **CAD & Pre/Post Processing:** ParaView, SpaceClaim, DesignModeler, CATIA V5, FreeCAD
-* **Methodologies:** Finite Volume Method (FVM), Adaptive Mesh Refinement (AMR), Grid Convergence Studies
-
----
-
-### 📌 Featured Projects
-* **[2D Incompressible Navier-Stokes Solver](./your-repository-name):** A modular, object-oriented C++ and Python solver for the Lid-Driven Cavity case, featuring dynamic Adaptive Mesh Refinement (AMR) and verified via rigorous grid independence studies.
-* **Formula Student (Aerodynamics & Multiphysics):** Evaluating structural responses of composite aerodynamic components under complex transient loads.
-
----
-
-### 📫 Connect with Me
-* 💼 **LinkedIn:** [://linkedin.com](https://://linkedin.com)
-* ✉️ **Email:** patsbill02@gmail.com
+The 2D Lid-Driven Cavity module was executed across discrete mesh densities. The resulting steady-state velocity profiles along the cavity centerlines demonstrated asymptotic convergence, ensuring that the numerical discretization schemes are spatial-resolution independent.
